@@ -4,8 +4,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/:name', function(req, res, next) {
-    res.render('organisation', { name: req.params.name});
+router.get('/', function(req, res, next) {
+    res.render('register.hbs');
 });
 
 module.exports = router;
