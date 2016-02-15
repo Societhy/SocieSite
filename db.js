@@ -2,16 +2,16 @@ var MongoClient = require('mongodb').MongoClient
 var assert = require('assert')
 
 var state = {
-  db: null,
+    db: null,
 }
 
 var databaseAPI = {
     connect: function(url, done) {
         if (state.db)
-            return done()
+        return done()
         MongoClient.connect(url, function(err, db) {
             if (err)
-                return done(err)
+            return done(err)
             state.db = db
             done()
         })
@@ -70,7 +70,8 @@ var databaseAPI = {
         userCursor.hasNext(function (err, user) {
             assert.equal(err, null)
             userCursor.next(function (err, user) {
-                userCallback(user)
+                noUser = (user != undefined ? null : true)
+                userCallback(noUser, user)
             })
         })
     },
@@ -106,7 +107,8 @@ var databaseAPI = {
         orgaCursor.hasNext(function (err, orga) {
             assert.equal(err, null)
             orgaCursor.next(function (err, orga) {
-                orgaCallback(orga)
+                noOrga = (orga != undefined ? null : true)
+                orgaCallback(noOrga, orga)
             })
         })
     },
