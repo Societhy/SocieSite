@@ -178,26 +178,3 @@ var databaseAPI = {
 }
 
 module.exports = databaseAPI
-
-// var db = require('./db')
-// var url = 'mongodb://localhost:27017/test'
-
-// db.connect(url, function (err) {
-//     if (err){
-//         console.log('Unable to connect to Mongo.')
-//         process.exit(1)
-//     } else {
-//         console.log('Connected to db');
-//         db.fillDatabase();
-//         db.getOrgaByName('croix rouge', function(orga) {
-//             console.log(orga);
-//         });
-//         db.getUserByAddress('0x00000004', function(user) {
-//             console.log(user);
-//         });
-//         app.use(function(req,res,next){
-//             req.db = db;
-//             next();
-//         });
-//     }
-// })
