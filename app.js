@@ -12,7 +12,7 @@ var register = require('./routes/register')
 
 var app = express();
 var db = require('./db')
-var url = 'mongodb://localhost:27017/test'
+var url = 'mongodb://10.41.177.67:27017/test'
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
